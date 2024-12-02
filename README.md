@@ -29,7 +29,7 @@ Avant de commencer, assurez-vous d'avoir installé :
 ## Configuration
 Pour adapter le projet à votre environnement local, modifiez les fichiers suivants :
 1. Configurer la Base de Données
-- Mettez à jour les informations de connexion dans DatabaseConfig :
+- Mettez à jour les informations de connexion dans ```DatabaseConfig``` :
      ```java
      public interface DatabaseConfig { 
          String URL = "jdbc:mysql://localhost:3307/gestion_conges_db";
@@ -38,7 +38,7 @@ Pour adapter le projet à votre environnement local, modifiez les fichiers suiva
      }
      ```
 2. Configurer l'Email
-- Mettez à jour les informations de l'email dans Mail :
+- Mettez à jour les informations de l'email dans ```Mail``` :
      ```java
      public class Mail {    
          private static final String FROM_EMAIL = "votre_email@gmail.com";
