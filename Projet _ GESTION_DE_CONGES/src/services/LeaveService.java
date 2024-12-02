@@ -270,7 +270,7 @@ public class LeaveService implements LeaveInterface, DatabaseConfig {
             pst.setInt(2, congeId);
             pst.executeUpdate();
             
-            String selectQuery = "SELECT e.nom, e.prenom, e.email, c.type_conge, c.debut_conge, c.fin_conge " +
+            String selectQuery = "SELECT e.nom, e.prenom, e.email, c.type_conge, c.date_debut, c.date_fin " +
                     "FROM Employe e " +
                     "JOIN Conge c ON e.employe_id = c.employe_id " +
                     "WHERE c.conge_id = ?";
@@ -282,8 +282,8 @@ public class LeaveService implements LeaveInterface, DatabaseConfig {
                         String prenom = capitalize(rs.getString("prenom"));
                         String email = rs.getString("email");
                         String typeConge = rs.getString("type_conge");
-                        String debutConge = rs.getDate("debut_conge").toString();
-                        String finConge = rs.getDate("fin_conge").toString();
+                        String debutConge = rs.getDate("date_debut").toString();
+                        String finConge = rs.getDate("date_fin").toString();
 
                         String subject = "Validation de votre demande de congé";
                         String body = String.format(
@@ -319,7 +319,7 @@ public class LeaveService implements LeaveInterface, DatabaseConfig {
             pstLeave.setInt(2, congeId);
             pstLeave.executeUpdate();
 
-            String selectQuery = "SELECT nb_jours, e.nom, e.prenom, e.email, c.type_conge, c.debut_conge, c.fin_conge, c.employe_id " +
+            String selectQuery = "SELECT nb_jours, e.nom, e.prenom, e.email, c.type_conge, c.date_debut, c.date_fin, c.employe_id " +
                     "FROM Conge c " +
                     "JOIN Employe e ON e.employe_id = c.employe_id " +
                     "WHERE c.conge_id = ?";
@@ -333,8 +333,8 @@ public class LeaveService implements LeaveInterface, DatabaseConfig {
                         String prenom = capitalize(rs.getString("prenom"));
                         String email = rs.getString("email");
                         String typeConge = rs.getString("type_conge");
-                        String debutConge = rs.getDate("debut_conge").toString();
-                        String finConge = rs.getDate("fin_conge").toString();
+                        String debutConge = rs.getDate("date_debut").toString();
+                        String finConge = rs.getDate("date_fin").toString();
 
                         pstBalance.setInt(1, nbJours);
                         pstBalance.setInt(2, employeId);

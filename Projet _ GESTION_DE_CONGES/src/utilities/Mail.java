@@ -12,8 +12,8 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.*;
 
 public class Mail {    
-    private static final String FROM_EMAIL = "votre_email@gmail.com";
-    private static final String FROM_EMAIL_PASSWORD = "votre_mot_de_passe";
+    private static final String FROM_EMAIL = "talan.transformationrh@gmail.com";
+    private static final String FROM_EMAIL_PASSWORD = "jzxslxnnxycmsrsz";
     
     private Session newSession = null;
     private MimeMessage mimeMessage = null;
