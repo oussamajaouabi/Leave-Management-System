@@ -6,9 +6,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/21627/Desktop/Projet de gestion de congés/jar_files/activation.jar"/>
-	<classpathentry kind="lib" path="C:/Users/21627/Desktop/Projet de gestion de congés/jar_files/javax.mail.jar"/>
-	<classpathentry kind="lib" path="C:/Users/21627/Desktop/Projet de gestion de congés/jar_files/jcalendar-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/21627/Desktop/Projet de gestion de congés/jar_files/mysql-connector-j-8.0.31.jar"/>
+	<classpathentry kind="lib" path="jar_files/activation.jar"/>
+	<classpathentry kind="lib" path="jar_files/javax.mail.jar"/>
+	<classpathentry kind="lib" path="jar_files/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="jar_files/mysql-connector-j-8.0.31.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
