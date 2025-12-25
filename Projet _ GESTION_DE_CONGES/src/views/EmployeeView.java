@@ -54,6 +54,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.font.TextAttribute;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+
 import javax.swing.ImageIcon;
 import java.awt.Toolkit;
 import javax.swing.UIManager;
@@ -1065,9 +1067,10 @@ public class EmployeeView {
 			        Calendar calendar = Calendar.getInstance();
 			        calendar.setTime(leaveStartDate);
 			        int year = calendar.get(Calendar.YEAR);
-		        
-			        if (year != 2024) {
-			            JOptionPane.showMessageDialog(frmApplicationDeGestion, "Seuls les congés avec une date de début en 2024 sont acceptés.", "Erreur", JOptionPane.ERROR_MESSAGE);
+			        int currentYear = LocalDate.now().getYear();
+			        
+			        if (year != currentYear) {
+			            JOptionPane.showMessageDialog(frmApplicationDeGestion, "Seuls les congés avec une date de début en " + currentYear + " sont acceptés.", "Erreur", JOptionPane.ERROR_MESSAGE);
 			            return;
 			        }
 			        
@@ -1127,14 +1130,15 @@ public class EmployeeView {
 			        Calendar calendar = Calendar.getInstance();
 			        calendar.setTime(leaveStartDate);
 			        int year = calendar.get(Calendar.YEAR);
+			        int currentYear = LocalDate.now().getYear();
 			        
 			        if (leaveName.isEmpty() || leaveStartDate == null || leaveEndDate == null) {
 			            JOptionPane.showMessageDialog(frmApplicationDeGestion, "Vérifiez les champs sont obligatoires.", "Erreur", JOptionPane.ERROR_MESSAGE);
 			            return;
 			        }
 			        
-			        if (year != 2024) {
-			            JOptionPane.showMessageDialog(frmApplicationDeGestion, "Seuls les congés avec une date de début en 2024 sont acceptés.", "Erreur", JOptionPane.ERROR_MESSAGE);
+			        if (year != currentYear) {
+			            JOptionPane.showMessageDialog(frmApplicationDeGestion, "Seuls les congés avec une date de début en " + currentYear + " sont acceptés.", "Erreur", JOptionPane.ERROR_MESSAGE);
 			            return;
 			        }
 
